@@ -1,12 +1,11 @@
-# problem.py
-from state import State
-from vehicle import Vehicle
+from core.state import State
+from core.vehicle import Vehicle
 from utils.utils import load_initial_state
 from copy import deepcopy
-
-GRID_SIZE = 6
-EXIT_ROW = 2
-EXIT_COL = 5  # Vị trí cổng ra của xe đỏ
+import utils.constants as const
+# GRID_SIZE = 6
+# EXIT_ROW = 2
+# EXIT_COL = 5  # Vị trí cổng ra của xe đỏ
 
 class Problem:
     def __init__(self, map_file_path):
@@ -40,7 +39,7 @@ class Problem:
                     return False
             elif delta == 1:
                 new_col = vehicle.col + vehicle.length
-                if new_col >= GRID_SIZE or (vehicle.row, new_col) in occupied:
+                if new_col >= const.GRID_SIZE or (vehicle.row, new_col) in occupied:
                     return False
         elif vehicle.direction == 'V':
             if delta == -1:
@@ -49,7 +48,7 @@ class Problem:
                     return False
             elif delta == 1:
                 new_row = vehicle.row + vehicle.length
-                if new_row >= GRID_SIZE or (new_row, vehicle.col) in occupied:
+                if new_row >= const.GRID_SIZE or (new_row, vehicle.col) in occupied:
                     return False
         return True
 
@@ -67,8 +66,4 @@ class Problem:
         if x is None or x.direction != 'H':
             return False
         # Kiểm tra xem phần đuôi xe X có nằm tại cột 5 chưa
-        return x.row == EXIT_ROW and x.col + x.length - 1 == EXIT_COL
-
-
-state = load_initial_state("maps/map1.txt")
-state.print_board()
+        return x.row == const.EXIT_ROW and x.col + x.length - 1 == const.EXIT_COL
