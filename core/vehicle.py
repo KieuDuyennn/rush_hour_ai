@@ -25,7 +25,3 @@ class Vehicle:
 
     def __repr__(self):
         return f"Vehicle({self.name}, ({self.row}, {self.col}), {self.direction}, {self.length})"
-
-v = Vehicle('A', 2, 1, 'H', 3)
-print(v)  # Vehicle(A, (2, 1), H, 3)
-print(v.cells())  # [(2, 1), (2, 2), (2, 3)]

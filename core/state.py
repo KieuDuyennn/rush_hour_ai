@@ -1,4 +1,4 @@
-from vehicle import Vehicle
+from core.vehicle import Vehicle
 from copy import deepcopy
 
 class State:
@@ -60,18 +60,3 @@ class State:
                 board[r][c] = v.name
         for row in board:
             print(' '.join(row))
-
-vehicles = {
-    'X': Vehicle('X', 2, 1, 'H', 2),
-    'A': Vehicle('A', 0, 0, 'V', 3),
-    'B': Vehicle('B', 0, 3, 'V', 2),
-}
-s = State(vehicles)
-s.print_board()
-
-print("Copy and move:")
-s2 = s.copy()
-s2.move_vehicle('A', +1)
-s2.print_board()
-
-print("Are they same?", s == s2)  # Should be False
