@@ -1,5 +1,6 @@
 from core.vehicle import Vehicle
 from core.state import State
+import os
 
 def load_initial_state(file_path):
     """
@@ -25,3 +26,7 @@ def load_initial_state(file_path):
 
     # Tạo đối tượng State ban đầu
     return State(vehicles)
+
+def get_map_files():
+    folder = "assets/maps"
+    return [f for f in os.listdir(folder) if f.endswith(".txt")]

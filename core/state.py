@@ -1,5 +1,6 @@
 from core.vehicle import Vehicle
 from copy import deepcopy
+import utils.constants as const
 
 class State:
     def __init__(self, vehicles: dict, move=None, parent=None, cost=0):
@@ -55,6 +56,7 @@ class State:
     def print_board(self):
         """In ra bàn cờ dạng 6x6 cho dễ debug"""
         board = [['.' for _ in range(6)] for _ in range(6)]
+        board[const.EXIT_ROW][const.EXIT_COL] = '*'
         for v in self.vehicles.values():
             for (r, c) in v.cells():
                 board[r][c] = v.name

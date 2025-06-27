@@ -1,4 +1,18 @@
-GRID_SIZE = 6
-EXIT_ROW = 2
-EXIT_COL = 5  # Vị trí cổng ra của xe đỏ
+GRID_SIZE = 6   # Map 6x6
+CELL_SIZE = 60  # Size of a cell
+EXIT_ROW = 2    # Exit gate
+EXIT_COL = 5    # Exit gate
+
+WINDOW_WIDTH = 800 
+WINDOW_HEIGHT = 600
+WINDOW_TITLE = 'Rush Hour Solver'
+FONT_FAMILY = 'Arial'
+FONT_SIZE = 18
+
+BACKGROUND_COLOR = (221, 221, 221)
+CELL_COLOR = (255, 255, 255)
+BLACK_COLOR = (0, 0, 0)
+WHITE_COLOR = (255, 255, 255)
+BOARD_ORIGIN = (50, 50)
+DROPDOWN_COLOR = (184, 249, 252)
 

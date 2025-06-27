@@ -22,8 +22,8 @@ class Problem:
                     new_state.move_vehicle(name, delta)
                     new_state.parent = state
                     new_state.move = (name, delta)
-                    move_cost = new_state.vehicles[name].length
-                    new_state.cost = state.cost + move_cost
+                    #move_cost = new_state.vehicles[name].length
+                    new_state.cost = state.cost + 1
                     successors.append(new_state)
 
         return successors

@@ -1,21 +1,23 @@
 from core.problem import Problem
-from utils.utils import load_initial_state
+from algorithms.bfs_test import breadth_first_search
+from gui.app import App
 
-print("⏳ Đang load map và sinh successors...\n")
+App()
 
-# Khởi tạo bài toán từ file map
+'''
 problem = Problem("assets/maps/map1.txt")
 
-# Lấy state ban đầu
-initial = problem.initial_state
+state = problem.initial_state
+state.print_board()
 
-print("🔰 Initial state:")
-initial.print_board()
+goal_state = breadth_first_search(problem)
 
-# Lấy các state kế tiếp
-successors = problem.get_successors(initial)
-
-print(f"\n✅ Có {len(successors)} trạng thái kế tiếp:")
-for i, s in enumerate(successors):
-    print(f"\n➡ Successor {i + 1}: move = {s.move}, cost = {s.cost}")
-    s.print_board()
+if goal_state:
+    print("✅ Found solution!")
+    print("Total moves:", len(goal_state.get_path()))
+    print("Moves:", goal_state.get_path())
+    print("\nFinal board:")
+    goal_state.print_board()
+else:
+    print("❌ No solution found.")
+'''
